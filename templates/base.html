@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<!--아래는 부트 스트랩의 초기 화면에서 linj와 script를 복사해서 붙인 것 임.  </p> -->
+
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}
+        {% endblock %}</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    {% load static %}
+    <link rel="stylesheet" href=" {% static 'style.css' %}">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</head>
+<body>
+<!--템플릿 확장...아 짜증나 왜 리스트가 안나오는 거지? 블럭 마감에서 철자는 반드시 붙여서 코딩 할 것. </p> -->
+
+    <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Django Bookmark</a>
+            <button class="navbar-toggler" type="button" data-toggle = "collapse" data-target ="#navbarSupportedContent"
+                    aria-controls=" navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span> </a>
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </nav>
+        <p></p>
+        <div class="row">
+            <div class="col">
+                {% block content %}
+
+                {% endblock %}
+
+                {% block pagination %}
+
+                {% endblock %}
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

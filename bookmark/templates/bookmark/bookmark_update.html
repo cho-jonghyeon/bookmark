@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}Update List{% endblock %}
+
+
+{% block content %}
+<body>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Update" class="btn btn-info btn-sm">
+    </form>
+</body>
+{% endblock %}
+
+<!-- <p> 모든 블럭의 끝에서 endblock철자는 반드시 붙여서 마감 해라. 즉 {% endblock %} </p> -->
